@@ -35,7 +35,12 @@
     (= (sort (vals (frequencies ranks))) full-house)))
 
 (defn two-pairs? [hand]
-  nil)
+  (let [ranks (map rank hand)
+        two-pairs [1 2 2]]
+    (cond
+      (four-of-a-kind? hand) true
+      (= (sort (vals (frequencies ranks))) two-pairs) true
+      :else false)))
 
 (defn straight? [hand]
   nil)
