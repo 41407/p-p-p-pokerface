@@ -14,7 +14,8 @@
     (str suit)))
 
 (defn pair? [hand]
-  nil)
+  (let [ranks (map rank hand)]
+    (>= (apply max (vals (frequencies ranks))) 2)))
 
 (defn three-of-a-kind? [hand]
   nil)
