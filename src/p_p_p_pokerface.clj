@@ -30,7 +30,9 @@
     (apply = suits)))
 
 (defn full-house? [hand]
-  nil)
+  (let [ranks (map rank hand)
+        full-house [2 3]]
+    (= (sort (vals (frequencies ranks))) full-house)))
 
 (defn two-pairs? [hand]
   nil)
