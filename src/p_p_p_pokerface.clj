@@ -1,7 +1,13 @@
 (ns p-p-p-pokerface)
 
+(def numeric-value-of {\T 10, \J 11, \Q 12, \K 13, \A 14})
+
 (defn rank [card]
-  nil)
+  (let [[rank _] card]
+    (cond
+      (Character/isDigit rank) (Integer/valueOf (str rank))
+      :else (numeric-value-of rank)
+      )))
 
 (defn suit [card]
   (let [[_ suit] card]
