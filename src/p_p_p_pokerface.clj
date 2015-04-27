@@ -22,10 +22,12 @@
     (>= (apply max (vals (frequencies ranks))) 3)))
 
 (defn four-of-a-kind? [hand]
-  nil)
+  (let [ranks (map rank hand)]
+    (>= (apply max (vals (frequencies ranks))) 4)))
 
 (defn flush? [hand]
-  nil)
+  (let [suits (map suit hand)]
+    (apply = suits)))
 
 (defn full-house? [hand]
   nil)
