@@ -18,7 +18,8 @@
     (>= (apply max (vals (frequencies ranks))) 2)))
 
 (defn three-of-a-kind? [hand]
-  nil)
+  (let [ranks (map rank hand)]
+    (>= (apply max (vals (frequencies ranks))) 3)))
 
 (defn four-of-a-kind? [hand]
   nil)
