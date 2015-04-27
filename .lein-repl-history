@@ -1,1 +1,12 @@
 exit
+(vals (frequencies [1 2 3 4 5))
+(vals (frequencies [1 2 3 4 5]))
+(1 [1 2 3])
+(first [1 2 3])
+(last [1 2 3])
+(- last[1 2 3 4 5] first [1 2 3 4 5])
+(- (last [1 2 3 4 5]) (first [1 2 3 4 5]))
+(apply = (vals (frequencies ["2H" "4H" "5H" "9H" "7H"])))
+(apply = (vals (frequencies ["2H" "4H" "5H" "9H" "9H"])))
+(apply = (vals (frequencies ["2H" "3H" "3H" "9H" "9H"])))
+(apply = (vals (frequencies ["2H" "3H" "3D" "4H" "6H"])))

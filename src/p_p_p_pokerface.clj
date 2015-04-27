@@ -43,7 +43,14 @@
       :else false)))
 
 (defn straight? [hand]
-  nil)
+  (let [high-ace (sort (map rank hand))
+        low-ace (sort (replace {14 1} high-ace))
+        straight-possible (apply = (vals (frequencies high-ace)))]
+    (if straight-possible
+      (or
+        (= 4 (- (last low-ace) (first low-ace)))
+        (= 4 (- (last high-ace) (first high-ace))))
+      false)))
 
 (defn straight-flush? [hand]
   nil)
